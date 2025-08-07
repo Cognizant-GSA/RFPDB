@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RFPDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{eac0829b-ef5d-4b47-8e83-cf4a4531ec05}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RFPDB</RootNamespace>
+    <AssemblyName>RFPDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="TRN\" />
+    <Folder Include="TRN\Tables\" />
+    <Folder Include="MAS\" />
+    <Folder Include="MAS\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="MAP\" />
+    <Folder Include="MAP\Tables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="TRN\Tables\UserWinzonePrompts.sql" />
+    <Build Include="MAS\Tables\PromptQuery.sql" />
+    <Build Include="TRN\Tables\QNCGenAIReponse.sql" />
+    <Build Include="TRN\Tables\QnCWorkbench.sql" />
+    <Build Include="dbo\Tables\old_cost.sql" />
+    <Build Include="TRN\Tables\RAIDMaskedData.sql" />
+    <Build Include="TRN\Tables\GeneralMaskedData.sql" />
+    <Build Include="MAP\Tables\PromptQueryParameters.sql" />
+    <Build Include="TRN\Tables\GenAIMaskedData.sql" />
+    <Build Include="MAS\Tables\PursuitQuestion.sql" />
+    <Build Include="TRN\Tables\WinzoneExtractedData.sql" />
+    <Build Include="MAS\Tables\PursuitAnswer.sql" />
+    <Build Include="MAP\Tables\PursuitQnA.sql" />
+    <Build Include="MAP\Tables\Prompts.sql" />
+    <Build Include="MAP\Tables\RFPcolumnMapping.sql" />
+    <Build Include="MAS\Tables\PromptCategory.sql" />
+    <Build Include="TRN\Tables\QnAExtractionUpload.sql" />
+    <Build Include="MAS\Tables\RFPDeckConfig.sql" />
+    <Build Include="TRN\Tables\QnAExtractionResult.sql" />
+    <Build Include="MAS\Tables\RFPMailTemplates.sql" />
+    <Build Include="MAS\Tables\RFPsynopsisAlias.sql" />
+    <Build Include="MAS\Tables\RFPsynopsisConfig.sql" />
+    <Build Include="TRN\Tables\BidParameters.sql" />
+    <Build Include="TRN\Tables\MaskedData.sql" />
+    <Build Include="TRN\Tables\RFPDataExtraction.sql" />
+    <Build Include="TRN\Tables\RFPslaAnalyzer.sql" />
+    <Build Include="TRN\Tables\RFPslas.sql" />
+    <Build Include="TRN\Tables\RFPtechnologyRequirement.sql" />
+    <Build Include="TRN\Tables\RFPtimeline.sql" />
+    <Build Include="TRN\Tables\RFPtoolsRequirement.sql" />
+    <Build Include="TRN\Tables\RFPuploadDocuments.sql" />
+    <Build Include="TRN\Tables\RFPuploadHistory.sql" />
+    <Build Include="TRN\Tables\RFPWinzoneOutputFiles.sql" />
+    <Build Include="TRN\Tables\SummarizedOpenAIData.sql" />
+    <Build Include="TRN\Tables\MaskedDataQnC.sql" />
+    <Build Include="Storage\XTP.sql" />
+    <Build Include="dbo\Stored Procedures\SP_AddUserPrompt.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetUserPrompts.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateCostUploadId.sql" />
+    <Build Include="dbo\Stored Procedures\Sp_ResetUserPrompts.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetProcessIds.sql" />
+    <Build Include="dbo\Stored Procedures\Sp_GetMaskType.sql" />
+    <Build Include="dbo\Stored Procedures\Sp_SetMaskType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetRFPDocumentsUploaded.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CheckRFPExists.sql" />
+    <Build Include="dbo\Stored Procedures\Sp_RFPDocumentStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetRFPTimelines.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DemandEnhancementGenAI.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertWinzoneInOutputFiles.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetActiveRFPUploads.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CheckRegenerationStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetUsedClientOverView.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetOldDemandsForPrefillData.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetRFPStatus.sql" />
+    <Build Include="dbo\Stored Procedures\GetActivePromptsWithCategories.sql" />
+    <Build Include="dbo\Stored Procedures\SP_AddBidParameters.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CheckIfAnyInProgress.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DeleteRFPUploadDetails.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetBidParameters.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetBidRFPFilePath.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetRFPDetails.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetRFPDocumentById.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SaveForDealOnAPage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SaveRFPDocument.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SaveRFPSynopsis.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateBidCalendaryDeckPath.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateBidFilePath.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetSummarizedOpenAIData.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdateOpenAIDeckPath.sql" />
+    <Build Include="dbo\Stored Procedures\SP_AppendRefreshCount.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GetRefreshCount.sql" />
+    <Build Include="Security\MAP.sql" />
+    <Build Include="Security\MAS.sql" />
+    <Build Include="Security\TRN.sql" />
+  </ItemGroup>
+</Project>

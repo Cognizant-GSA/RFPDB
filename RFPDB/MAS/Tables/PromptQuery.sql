@@ -1,0 +1,27 @@
+﻿CREATE TABLE [MAS].[PromptQuery] (
+    [Id]                   INT            IDENTITY (1, 1) NOT NULL,
+    [PromptID]             INT            NOT NULL,
+    [CategoryID]           INT            NOT NULL,
+    [Title]                NVARCHAR (100) NOT NULL,
+    [Subtitle]             NVARCHAR (200) NOT NULL,
+    [Query]                NVARCHAR (MAX) NOT NULL,
+    [IsActive]             BIT            NOT NULL,
+    [CreatedBy]            INT            NOT NULL,
+    [CreatedDate]          DATETIME       NOT NULL,
+    [ModifiedBy]           INT            NULL,
+    [ModifiedDate]         DATETIME       NOT NULL,
+    [FileName]             NVARCHAR (500) NULL,
+    [OrderID]              INT            NULL,
+    [Temperature]          FLOAT (53)     NULL,
+    [Presence_Penalty]     FLOAT (53)     NULL,
+    [Frequency_Penalty]    FLOAT (53)     NULL,
+    [Top_P]                FLOAT (53)     NULL,
+    [IsDynamic]            BIT            NULL,
+    [DynamicParameterDB]   NVARCHAR (50)  NULL,
+    [DynamicParameterType] NVARCHAR (50)  NULL,
+    [MaxTokens]            BIGINT         NULL,
+    [k]                    BIGINT         NULL,
+    [SourceDocumentPrompt] NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

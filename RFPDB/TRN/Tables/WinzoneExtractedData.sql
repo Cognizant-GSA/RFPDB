@@ -1,0 +1,25 @@
+﻿CREATE TABLE [TRN].[WinzoneExtractedData] (
+    [Id]                    BIGINT         IDENTITY (1, 1) NOT NULL,
+    [WinzoneId]             BIGINT         NOT NULL,
+    [ClientRequirment]      NVARCHAR (MAX) NULL,
+    [ClientRequirmentList]  NVARCHAR (MAX) NULL,
+    [IsActive]              BIT            NOT NULL,
+    [CreatedBy]             BIGINT         NOT NULL,
+    [CreatedDate]           DATETIME       NOT NULL,
+    [WinthemesList]         NVARCHAR (MAX) NULL,
+    [ClientObjectivesList]  NVARCHAR (MAX) NULL,
+    [PursuitType]           NVARCHAR (100) NULL,
+    [OriginatedFromRFI]     NVARCHAR (100) NULL,
+    [RFPSubmssionFormat]    NVARCHAR (500) NULL,
+    [RFPIssuanceDate]       DATETIME       NULL,
+    [RFPSubmission]         DATETIME       NULL,
+    [DealArcheType]         NVARCHAR (MAX) NULL,
+    [DealArcheSubType]      NVARCHAR (MAX) NULL,
+    [BusinessProcess]       NVARCHAR (MAX) NULL,
+    [Competitors]           NVARCHAR (MAX) NULL,
+    [Incumbent]             NVARCHAR (MAX) NULL,
+    [WinthemesListRFP]      NVARCHAR (MAX) NULL,
+    [RFPSubmssionFormatRFP] NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

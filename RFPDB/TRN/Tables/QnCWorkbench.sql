@@ -1,0 +1,25 @@
+﻿CREATE TABLE [TRN].[QnCWorkbench] (
+    [Id]              INT            IDENTITY (1, 1) NOT NULL,
+    [WinzoneID]       BIGINT         NOT NULL,
+    [QnCId]           INT            NULL,
+    [QuestionId]      INT            NULL,
+    [Question]        VARCHAR (3000) NOT NULL,
+    [Industry]        VARCHAR (100)  NOT NULL,
+    [SL]              VARCHAR (1000) NOT NULL,
+    [Offering]        VARCHAR (1000) NOT NULL,
+    [SubOffering]     VARCHAR (1000) NOT NULL,
+    [Response]        VARCHAR (3000) NULL,
+    [ResponseGivenBy] VARCHAR (100)  NULL,
+    [Status]          INT            NULL,
+    [Category]        VARCHAR (1000) NULL,
+    [OtherCategory]   VARCHAR (1000) NULL,
+    [IsUserAdded]     BIT            NOT NULL,
+    [IsQNCApplicable] BIT            NULL,
+    [GENAIresponse]   NVARCHAR (MAX) NULL,
+    [IsActive]        BIT            NOT NULL,
+    [CreatedBy]       CHAR (25)      NOT NULL,
+    [CreatedDate]     DATETIME       NOT NULL,
+    [ModifiedBy]      CHAR (25)      NULL,
+    [ModifiedDate]    DATETIME       NULL
+);
+
